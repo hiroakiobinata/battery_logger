@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BatteryLogger</string>
+    <string name="description">バッテリー消費を記録しています&#8230;</string>
+</resources>
