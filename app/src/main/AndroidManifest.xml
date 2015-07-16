@@ -23,7 +23,7 @@
         </activity>
 
         <receiver
-            android:name=".BatteryLoggerLauncher"
+            android:name=".BatteryLoggerLauncher$Receiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

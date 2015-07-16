@@ -23,4 +23,10 @@ public class Preferences {
                 .putLong(KEY_LOGGER_START_AT, startTimeInMillis)
                 .apply();
     }
+
+    public static void removeLoggerStartAt(Context context) {
+        getPrefs(context).edit()
+                .remove(KEY_LOGGER_START_AT)
+                .apply();
+    }
 }

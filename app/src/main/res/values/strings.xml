@@ -1,4 +1,6 @@
 <resources>
+    <string name="afresh">ログを取り直す</string>
     <string name="app_name">BatteryLogger</string>
-    <string name="description">バッテリー消費を記録しています&#8230;</string>
+    <string name="description">%1$s 以降のバッテリー消費を記録しています。</string>
+    <string name="initializing">初期化中&#8230;</string>
 </resources>

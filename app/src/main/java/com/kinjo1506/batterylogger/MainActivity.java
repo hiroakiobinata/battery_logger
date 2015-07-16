@@ -8,6 +8,14 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            // ログ取得開始
+            BatteryLoggerLauncher.getInstance().startLogging(this);
+
+            getFragmentManager().beginTransaction()
+                    .add(android.R.id.content, new MainFragment(), MainFragment.TAG)
+                    .commit();
+        }
     }
 }

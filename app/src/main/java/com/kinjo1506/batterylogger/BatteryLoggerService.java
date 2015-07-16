@@ -8,8 +8,7 @@ import android.os.BatteryManager;
 import android.support.annotation.NonNull;
 
 public class BatteryLoggerService extends IntentService {
-    private static final String TAG      = BatteryLoggerService.class.getSimpleName();
-    private static final String FILENAME = "battery_log.txt";
+    private static final String TAG = BatteryLoggerService.class.getSimpleName();
 
     public BatteryLoggerService() {
         super(TAG);
@@ -56,7 +55,8 @@ public class BatteryLoggerService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        LogUtil.append(this, FILENAME, String.format(
+        String filename = intent.getStringExtra(BatteryLoggerLauncher.EXTRA_FILENAME);
+        LogUtil.append(this, filename, String.format(
                 "Battery Level: %3d%%  Status: %s", getBatteryLevel(this), getBatteryStatus(this)));
     }
 }

@@ -18,6 +18,24 @@ public class LogUtil {
     }
 
     /**
+     * 指定したファイルをリネームする。
+     * 変更後の名前を持つファイルがすでに存在する場合は上書きされる。
+     * @param context
+     * @param src
+     * @param dest
+     * @return
+     */
+    public static boolean rename(Context context, String src, String dest) {
+        File srcFile = new File(context.getExternalFilesDir(null), src);
+        if (!srcFile.exists()) { return false; }
+
+        File destFile = new File(context.getExternalFilesDir(null), dest);
+        if (destFile.exists() && !destFile.delete()) { return false; }
+
+        return srcFile.renameTo(destFile);
+    }
+
+    /**
      * 指定したファイルにログを追記する
      * @param context
      * @param filename
